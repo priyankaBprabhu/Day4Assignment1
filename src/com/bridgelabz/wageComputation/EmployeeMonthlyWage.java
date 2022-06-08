@@ -1,8 +1,8 @@
 package com.bridgelabz.wageComputation;
 
 public class EmployeeMonthlyWage {
-    int pWorking_hours = 0;
-    int fWorking_hours = 0;
+    int partTimeWorkingHours = 0;
+    int fullTimeWorkingHours = 0;
     int working_days = 0;
     int partTimeEMPWage = 0;
     int fullTimeEMPWage = 0;
@@ -26,13 +26,13 @@ public class EmployeeMonthlyWage {
             switch (employee) {
                 case 0 -> {
                     working_hours = working_hours + 8;
-                    fWorking_hours = fWorking_hours + 8;
-                    fullTimeEMPWage = fullTimeWage(wage_per_hour, fWorking_hours);
+                    fullTimeWorkingHours = fullTimeWorkingHours + 8;
+                    fullTimeEMPWage = fullTimeWage(wage_per_hour, fullTimeWorkingHours);
                 }
                 case 1 -> {
                     working_hours = working_hours + 4;
-                    pWorking_hours = pWorking_hours + 4;
-                    partTimeEMPWage = partTimeWage(wage_per_hour, pWorking_hours);
+                    partTimeWorkingHours = partTimeWorkingHours + 4;
+                    partTimeEMPWage = partTimeWage(wage_per_hour, partTimeWorkingHours);
                 }
                 case 2 -> {
                 }
@@ -41,8 +41,8 @@ public class EmployeeMonthlyWage {
 
         }
         System.out.println("Company "+ company);
-        System.out.println(" part time employee working hours" + " " + pWorking_hours);
-        System.out.println(" full time employee working hours" + " " + fWorking_hours);
+        System.out.println(" part time employee working hours" + " " + partTimeWorkingHours);
+        System.out.println(" full time employee working hours" + " " + fullTimeWorkingHours);
         System.out.println("Total employee  wage per month" + " " + (fullTimeEMPWage + partTimeEMPWage));
 
     }
