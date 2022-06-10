@@ -7,13 +7,25 @@ public class EmployeeMonthlyWage {
     private static int partTimeEMPWage;
     private static int fullTimeEMPWage ;
     public static int companyWage ;
+    private final int total_working_hrs;
+    private final int total_working_days;
+    private final String company;
+    private int wage_per_hour;
+
+    public EmployeeMonthlyWage(String company, int total_working_hrs, int total_working_days, int wage_per_hour) {
+        this.wage_per_hour = wage_per_hour;
+        this.total_working_hrs = total_working_hrs;
+        this.total_working_days = total_working_days;
+        this.company = company;
+
+    }
 
     static int  wage(int wage_per_hour, int hour_per_day) {
 
         return (wage_per_hour * hour_per_day );
     }
 
-       public  EmployeeMonthlyWage(String company, int total_working_hrs, int total_working_days, int wage_per_hour){
+       public int wageComputation(){
         int working_hours = 0;
 
         while((working_hours <=total_working_hrs)&&(working_days <=total_working_days))
@@ -38,12 +50,13 @@ public class EmployeeMonthlyWage {
              companyWage = (fullTimeEMPWage + partTimeEMPWage);
              working_days++;
 
+
         }
 
-        System.out.println(" part time employee working hours" + " " + partTimeWorkingHours);
-        System.out.println(" full time employee working hours" + " " + fullTimeWorkingHours);
-        System.out.println("Employee Monthly Wage of the " + company + " company is  "+ companyWage);
-
+        return companyWage;
     }
 
+    public void display(){
+        System.out.println("Employee Monthly Wage of the " + company + " company is  ");
+    }
 }
