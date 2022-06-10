@@ -1,6 +1,6 @@
 package com.bridgelabz.wageComputation;
 
-public class EmployeeMonthlyWage {
+public class EmployeeMonthlyWage implements EmpWageMulCompanies {
     private static int partTimeWorkingHours ;
     private static int fullTimeWorkingHours ;
     private static int working_days ;
@@ -53,8 +53,8 @@ public class EmployeeMonthlyWage {
 
         }
 
-        return companyWage;
-    }
+           return companyWage;
+       }
 
     public void display(){
         System.out.println("Employee Monthly Wage of the " + company + " company is  ");
